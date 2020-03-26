@@ -6,6 +6,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+
   passwordText.value = password;
 
 }
@@ -13,9 +14,10 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//declare function
-function generatepassword() {
-// code goes here
+
+function generatePassword() {
+  //code goes here
+  // code goes here
 // prompt user for "would you like to make a new password?"
 //confirm("Would you like to make a new password?")
 // prompt user length (8-120); confirm
@@ -31,3 +33,8 @@ var lowerCase = confirm("Include lower case letters?");
 var upperCase = confirm("Include upper case letters?");
 
 }
+  
+  var password = prompt()
+  return 
+}
+
