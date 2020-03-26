@@ -17,24 +17,27 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   //code goes here
-  // code goes here
-// prompt user for "would you like to make a new password?"
-//confirm("Would you like to make a new password?")
-// prompt user length (8-120); confirm
-//prompt user upper case; confirm
-// prompt user for lower case; confirm
-// prompt user for numbers (1-9); confirm
-// prompt user for special characters (!,$,&); confirm
+  // alerts to pop up asking the following prompts
+  // prompt user include numbers; confirm
+  // prompt user length (8-120); confirm
+  //prompt user upper case; confirm
+  // prompt user for lower case; confirm
+  // prompt user for numbers (1-9); confirm
+  // prompt user for special characters (!,$,&); confirm
 
-// declare variables
-var password = confirm("Would you like to make a new password?");
-var passwordLength = prompt("How long would you like your new password to be? (6-120 characters)");
-var lowerCase = confirm("Include lower case letters?");
-var upperCase = confirm("Include upper case letters?");
-
+  // declare variables; write prompts
+  var password = confirm("Would you like to include numbers?");
+  var passwordLength = prompt("How many characters between 8 and 128?");
+  var lowerCase = confirm("Include lower case letters?");
+  var upperCase = confirm("Include upper case letters?");
+  var symbols = confirm("Include special characters?");
+  
+  
+  var numbers = ['1','2','3','4','5','6','7','8','9']
+  
+  return ' ';
 }
   
-  var password = prompt()
-  return 
-}
+
+
 
