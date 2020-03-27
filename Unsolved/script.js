@@ -49,7 +49,7 @@ function generatePassword() {
   var passwordArr = []; //holds value of user choices
   // if statement of if all prompts confirmed
   if () { // logic: if all prompts confirmed
-    passwordArr = passwordArr.concat(numbers)
+    passwordArr = passwordArr.concat(numbers) //concat adds values to existing/empty array
   }
   if () {
     passwordArr = passwordArr.concat(passwordLength)
@@ -66,6 +66,7 @@ function generatePassword() {
   return ' ';
 }
   
-
+// var options = [array of variables]; for loop for length of password
+// 
 
 
