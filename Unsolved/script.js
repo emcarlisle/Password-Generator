@@ -15,14 +15,14 @@ var num = ['0','1','2','3','4','5','6','7','8','9'];
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var symbols = ['!','@','#','$','%','&','-','+','=','*','?'];
 
-//confirms -initialize as boolyeans ; when using confirm method, it returns as a boolyean
+//confirms -initialize as boolyeans ; when using confirm method, it returns as a boolyean ; to put into function genP
 var confirmNum = false;
 var confirmUpperCase = false;
 var confirmSymbols = false; 
 var confirmPasswordLength = 0;
 
 // confirmed array of user choices with lowercase letters bc we assume the user wants lower case in their password
-var confirmArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var confirmPasswordArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 var password = '';
 
@@ -39,22 +39,22 @@ function generatePassword() {
 
   // if statment for confirms
   if (confirmNum === true) {
-  confirmArr = confirmArr.concat(num); // .concat adds to array
+  confirmPasswordArr = confirmPasswordArr.concat(num); // .concat adds to array
   }
   if (confirmUpperCase === true) {
-    confirmArr = confirmArr.concat(upperCase);
+    confirmPasswordArr = confirmPasswordArr.concat(upperCase);
   }
   if (confirmSymbols === true) {
-    confirmArr = confirmArr.concat(symbols);
+    confirmPasswordArr = confirmPasswordArr.concat(symbols);
   }
   if (confirm === true) {
-    confirmArr = confirmArr.concat(num);
+    confirmPasswordArr = confirmPasswordArr.concat(num);
   }
   if (confirmPasswordLength < 8 || confirmPasswordLength > 128) {
     alert("Please enter a valid number between given range.");
   }
 
-  // var confirmArr has lower case chars in the array, so when we have confirm vars, we can add to existing array.
+  // var confirmPasswordArr has lower case chars in the array, so when we have confirm vars, we can add to existing array.
   // the for loop will be used to only choose characters within the amount the user chooses
   // math.random & math.floor will pick random chars within array 
   //after for loop will be to return password
