@@ -13,13 +13,16 @@ generateBtn.addEventListener("click", writePassword);
 //criteria requirements
 var num = ['0','1','2','3','4','5','6','7','8','9'];
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var specialChar = ['!','@','#','$','%','&','-','+','=','*','?'];
+var symbols = ['!','@','#','$','%','&','-','+','=','*','?'];
 
-// confirmed array of user choices
-var confirmNum = ["Would you like numbers in your password?"];
-var confirmUpperCase = ["Include upper case?"];
-var confirmSpecialChar = ["Include special characters?"];
-var confirmPasswordLength = prompt("How many characters would you like? Please enter a number between 8-128.");
+//confirms -initialize as boolyeans ; when using confirm method, it returns as a boolyean
+var confirmNum = false;
+var confirmUpperCase = false;
+var confirmSymbols = false; 
+var confirmPasswordLength = 0;
+
+// confirmed array of user choices with lowercase letters bc we assume the user wants lower case in their password
+var confirmArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 // if statment for confirmPL
 if (confirmPasswordLength < 8 || confirmPasswordLength > 128) {
@@ -29,6 +32,7 @@ if (confirmPasswordLength < 8 || confirmPasswordLength > 128) {
 
 ]
 function generatePassword() {
+var confirmPasswordLength = prompt("How many characters would you like? Please enter a number between 8-128.");
     //code goes here
 
     
