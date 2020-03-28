@@ -42,7 +42,7 @@ function generatePassword() {
   
   // if statment for confirms
   if (confirmPasswordLength < 8 || confirmPasswordLength > 128) {
-    confirmPasswordLength = prompt("Please enter a valid number between given range.");
+    confirmPasswordLength = prompt("Please enter a valid number between 8-128.");
   }
   if (confirmNum === true) {
   confirmPasswordArr = confirmPasswordArr.concat(num); // .concat adds to array
