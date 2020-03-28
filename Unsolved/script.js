@@ -24,21 +24,45 @@ var confirmPasswordLength = 0;
 // confirmed array of user choices with lowercase letters bc we assume the user wants lower case in their password
 var confirmArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-// if statment for confirmPL
-if (confirmPasswordLength < 8 || confirmPasswordLength > 128) {
-    alert("Please enter a valid number between given range.");
-}
+var password = '';
 
 
-]
+
+// when button generatePassword is clicked, series of prompts appear
 function generatePassword() {
-var confirmPasswordLength = prompt("How many characters would you like? Please enter a number between 8-128.");
-    //code goes here
+  //code goes here
+  // local variables to prompt user
+  var num = confirm("Would you like your password to include numbers?");
+  var upperCase = confirm("Include upper case letters?");
+  var symbols = confirm("Include special characters?");
+  var confirmPasswordLength = prompt("How many characters would you like? Please enter a number between 8-128.");
 
-    
-    var password = prompt()
-    return 
+  // if statment for confirms
+  if (confirmNum === true) {
+  confirmArr = confirmArr.concat(num); // .concat adds to array
   }
+  if (confirmUpperCase === true) {
+    confirmArr = confirmArr.concat(upperCase);
+  }
+  if (confirm === true) {
+    confirmArr = confirmArr.concat(num);
+  }
+  if (confirmPasswordLength < 8 || confirmPasswordLength > 128) {
+    alert("Please enter a valid number between given range.");
+  }
+
+  // var confirmArr has lower case chars in the array, so when we have confirm vars, we can add to existing array.
+  // the for loop will be used to only choose characters within the amount the user chooses
+  // math.random & math.floor will pick random chars within array 
+  //after for loop will be to return password
+
+
+  
+
+// for loop for passwordLength
+  var password = prompt()
+  return password;
+}
 
 
 var generateBtn = document.querySelector("#generate");
