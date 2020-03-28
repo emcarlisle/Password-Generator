@@ -53,7 +53,7 @@ function generatePassword() {
   if (confirmSymbols === true) {
     confirmPasswordArr = confirmPasswordArr.concat(symbols);
   }
-  console.log(confirmPasswordLength);
+  console.log(confirmPasswordArr);
   
 
   // var confirmPasswordArr has lower case chars in the array, so when we have confirm vars, we can add to existing array.
@@ -61,7 +61,7 @@ function generatePassword() {
   // math.random & math.floor will pick random chars within array 
   //after for loop will be to return password
 
-  for (var i = 0; i < confirmPasswordLength; i++); {
+  for (var i = 0; i < confirmPasswordLength; i++) {
     password = password + confirmPasswordArr[Math.floor(Math.random() * confirmPasswordArr.length)] // inside function is math.random * length of conArr
     console.log(password); 
     
