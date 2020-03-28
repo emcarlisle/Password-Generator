@@ -19,7 +19,7 @@ var symbols = ['!','@','#','$','%','&','-','+','=','*','?'];
 var confirmNum = false;
 var confirmUpperCase = false;
 var confirmSymbols = false; 
-var confirmPasswordLength = 0;
+var confirmPasswordLength = 8;
 
 // confirmed array of user choices with lowercase letters bc we assume the user wants lower case in their password
 var confirmPasswordArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -32,14 +32,18 @@ var password = '';
 function generatePassword() {
   //code goes here
   // local variables to prompt user ; not the same as var num bc var num is an array of strings of numbers
-  var confirmNum = confirm("Would you like your password to include numbers?");
-  var confirmUpperCase = confirm("Include upper case letters?");
-  var confirmSymbols = confirm("Include special characters?");
+  confirmNum = confirm("Would you like your password to include numbers?");
+  confirmUpperCase = confirm("Include upper case letters?");
+  confirmSymbols = confirm("Include special characters?");
   console.log(confirmNum, confirmUpperCase, confirmSymbols);
 
   var confirmPasswordLength = prompt("How many characters would you like? Please enter a number between 8-128.");
-
+  console.log(confirmPasswordLength);
+  
   // if statment for confirms
+  if (confirmPasswordLength < 8 || confirmPasswordLength > 128) {
+    confirmPasswordLength = prompt("Please enter a valid number between given range.");
+  }
   if (confirmNum === true) {
   confirmPasswordArr = confirmPasswordArr.concat(num); // .concat adds to array
   }
@@ -49,12 +53,8 @@ function generatePassword() {
   if (confirmSymbols === true) {
     confirmPasswordArr = confirmPasswordArr.concat(symbols);
   }
-  if (confirm === true) {
-    confirmPasswordArr = confirmPasswordArr.concat(num);
-  }
-  if (confirmPasswordLength < 8 || confirmPasswordLength > 128) {
-    alert("Please enter a valid number between given range.");
-  }
+  console.log(confirmPasswordLength);
+  
 
   // var confirmPasswordArr has lower case chars in the array, so when we have confirm vars, we can add to existing array.
   // the for loop will be used to only choose characters within the amount the user chooses
