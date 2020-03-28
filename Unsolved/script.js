@@ -1,5 +1,5 @@
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// hw 3
+var generateBtn = document.querySelector("#generate");
 
 //declare variables outside of function so that they can be used anytime (global) as arrays
 // and not inside function since they can only be used within that function (local)
@@ -31,10 +31,12 @@ var password = '';
 // when button generatePassword is clicked, series of prompts appear
 function generatePassword() {
   //code goes here
-  // local variables to prompt user
-  var num = confirm("Would you like your password to include numbers?");
-  var upperCase = confirm("Include upper case letters?");
-  var symbols = confirm("Include special characters?");
+  // local variables to prompt user ; not the same as var num bc var num is an array of strings of numbers
+  var confirmNum = confirm("Would you like your password to include numbers?");
+  var confirmUpperCase = confirm("Include upper case letters?");
+  var confirmSymbols = confirm("Include special characters?");
+  console.log(confirmNum, confirmUpperCase, confirmSymbols);
+
   var confirmPasswordLength = prompt("How many characters would you like? Please enter a number between 8-128.");
 
   // if statment for confirms
@@ -60,23 +62,24 @@ function generatePassword() {
   //after for loop will be to return password
 
   for (var i = 0; i < confirmPasswordLength; i++); {
-
+    password = password + confirmPasswordArr[Math.floor(Math.random() * confirmPasswordArr.length)] // inside function is math.random * length of conArr
+    console.log(password); 
+    
   }
-  
-
-
-  var password = prompt()
-  return password;
+  return password; // return password goes after the for loop
 }
 
 
-var generateBtn = document.querySelector("#generate");
+// given function by instrucor; moved to the end for better comprehension
 
 function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
   
   
-    passwordText.value = password;
-  
-  }
+  passwordText.value = password;
+}
+
+
+  // Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
