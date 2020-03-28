@@ -44,6 +44,9 @@ function generatePassword() {
   if (confirmUpperCase === true) {
     confirmArr = confirmArr.concat(upperCase);
   }
+  if (confirmSymbols === true) {
+    confirmArr = confirmArr.concat(symbols);
+  }
   if (confirm === true) {
     confirmArr = confirmArr.concat(num);
   }
@@ -56,10 +59,12 @@ function generatePassword() {
   // math.random & math.floor will pick random chars within array 
   //after for loop will be to return password
 
+  for (var i = 0; i < confirmPasswordLength; i++); {
 
+  }
   
 
-// for loop for passwordLength
+
   var password = prompt()
   return password;
 }
