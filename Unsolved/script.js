@@ -25,7 +25,7 @@ var confirmPasswordLength = 8;
 var confirmPasswordArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 var password = '';
-
+// global scoping // inside the function is called local variables
 
 
 // when button generatePassword is clicked, series of prompts appear
@@ -45,7 +45,7 @@ function generatePassword() {
     confirmPasswordLength = prompt("Please enter a valid number between 8-128.");
   }
   if (confirmNum === true) {
-  confirmPasswordArr = confirmPasswordArr.concat(num); // .concat adds to array
+  confirmPasswordArr = confirmPasswordArr.concat(num); // .concat adds to existing array at the end
   }
   if (confirmUpperCase === true) {
     confirmPasswordArr = confirmPasswordArr.concat(upperCase);
@@ -83,3 +83,6 @@ function writePassword() {
 
   // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+ 
